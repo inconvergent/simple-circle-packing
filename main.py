@@ -83,23 +83,49 @@ def show(ctx, circles):
     ctx.arc(c['x'], c['y'], c['r'], 0, TWOPI)
     ctx.stroke()
 
+  # you can also draw lines like this:
+
+  # # start drawing
+  # ctx.move_to(x, y)
+
+  # # draw line:
+  # ctx.line_to(x1, y1)
+
+  # #draw line:
+  # ctx.line_to(x2, y2)
+
+  # # line is not visible until you do
+  # ctx.strok()
+
+  # # similarly you can use:
+  # ctx.fill()
+
+  # # to fill in a shape, instead of drawing it's outline.
+
+  # note: you can combine line_to, move_to and arc to make more complex shapes.
+
 
 def main():
 
+  # make the canvas
   sur = cairo.ImageSurface(cairo.FORMAT_ARGB32, SIZE, SIZE)
   ctx = cairo.Context(sur)
+
+  # scale canvas so that x and y ranges from 0 to 1.
   ctx.scale(SIZE, SIZE)
 
+  # set the background color of the canvas
   ctx.set_source_rgba(*BACK)
-  ctx.set_line_width(LINEWIDTH)
   ctx.rectangle(0.0, 0.0, 1.0, 1.0)
   ctx.fill()
+
+  ctx.set_line_width(LINEWIDTH)
 
 
   circles = []
   add_new_circles(NEW_COUNT, circles)
 
-  for i in xrange(1000):
+  for i in xrange(2000):
 
     increase_radius(circles)
 
