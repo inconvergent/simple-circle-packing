@@ -16,6 +16,8 @@ SIZE = 1000
 ONE = 1./SIZE
 LINEWIDTH = ONE
 
+STEPS = 500
+
 NEW_COUNT = 100
 
 RES = 'out.png'
@@ -83,7 +85,16 @@ def show(ctx, circles):
     ctx.arc(c['x'], c['y'], c['r'], 0, TWOPI)
     ctx.stroke()
 
-  # you can also draw lines like this:
+  # # if you want random colors try this instead:
+
+  # # for c in circles:
+
+    # rgba = [random(), random(), random(), 1.0]
+    # ctx.set_source_rgba(*rgba)
+    # ctx.arc(c['x'], c['y'], c['r'], 0, TWOPI)
+    # ctx.stroke()
+
+  # # you can also draw lines like this:
 
   # # start drawing
   # ctx.move_to(x, y)
@@ -95,7 +106,7 @@ def show(ctx, circles):
   # ctx.line_to(x2, y2)
 
   # # line is not visible until you do
-  # ctx.strok()
+  # ctx.stroke()
 
   # # similarly you can use:
   # ctx.fill()
@@ -125,7 +136,7 @@ def main():
   circles = []
   add_new_circles(NEW_COUNT, circles)
 
-  for i in xrange(2000):
+  for i in xrange(STEPS):
 
     increase_radius(circles)
 

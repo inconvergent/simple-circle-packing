@@ -2,6 +2,8 @@
 
 ![img](example.png?raw=True, "img")
 
-Here is an example of simple circle packing using basic python pluss Cairo for
+Example of simple circle packing using basic Python, pluss Cairo for
 visualization.
+
+Also contains a few other useful comments on how to use cairo.
 
