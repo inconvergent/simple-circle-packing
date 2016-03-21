@@ -87,7 +87,7 @@ def show(ctx, circles):
 
   # # if you want random colors try this instead:
 
-  # # for c in circles:
+  # for c in circles:
 
     # rgba = [random(), random(), random(), 1.0]
     # ctx.set_source_rgba(*rgba)
@@ -111,7 +111,7 @@ def show(ctx, circles):
   # # similarly you can use:
   # ctx.fill()
 
-  # # to fill in a shape, instead of drawing it's outline.
+  # # to fill in a shape, instead of drawing its outline.
 
   # note: you can combine line_to, move_to and arc to make more complex shapes.
 
